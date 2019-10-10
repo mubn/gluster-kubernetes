@@ -11,10 +11,12 @@ metadata:
 spec:
   selector:
     deploy-heketi: pod
+  type: NodePort
   ports:
-  - name: deploy-heketi
-    port: 8080
-    targetPort: 8080
+    - name: deploy-heketi
+      port: 8080
+      targetPort: 8080
+      nodePort: 40525
 ---
 kind: Deployment
 apiVersion: extensions/v1beta1
